@@ -1,0 +1,29 @@
+{
+    "setup":{
+
+    },
+    "TS1":{
+        "loginPage":{
+            "username":"student",
+            "password": "Password123"
+        }
+    },
+    "TS2":{
+        "loginPage":{
+            "username":"student",
+            "password": "adfadfd"
+        }
+    },
+    "TS3":{
+        "loginPage":{
+            "username":"studenasdt",
+            "password": "Password123"
+        }
+    },
+    "TS4":{
+        "loginPage":{
+            "username":"stusddent",
+            "password": "Passworsdd123"
+        }
+    }
+}
