@@ -1,9 +1,9 @@
 {
-    "env":{
-        "TenantUrl":"https://practicetestautomation.com/practice-test-login/",
-        "TenantApi":"https://reqres.in",
-        "userName":"admin",
-        "password":"U2FsdGVkX18wJafeLvrjhnONMmVh/RlOl9sSZVlseIM=",
-        "key":"tempPass"
-    }
+  "env": {
+    "TenantUrl": "https://practicetestautomation.com/practice-test-login/",
+    "TenantApi": "https://restful-booker.herokuapp.com",
+    "userName": "admin",
+    "password": "U2FsdGVkX18wJafeLvrjhnONMmVh/RlOl9sSZVlseIM=",
+    "key": "tempPass"
+  }
 }

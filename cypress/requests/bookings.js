@@ -25,11 +25,11 @@ class bookingsApi {
   createBookings(body) {
     cy.log(body)
     let method = "post";
-    let url = `${Cypress.env("TenantApi")}/api/users`;
+    let url = `${Cypress.env("TenantApi")}/booking`;
     return cy
       .request({ method: method, url: url, body: body })
       .then((response) => {
-        expect(response.status).to.be.eq(201)
+        expect(response.status).to.be.eq(200)
       });
   }
 }

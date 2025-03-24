@@ -12,9 +12,9 @@ describe("API Tests", function () {
   beforeEach("Before Each case", function () {
     cy.fixture("API-tests/productTests").then((data) => {
       this.data = data;
-      // cy.createToken().then(() => {
-      //   cy.log("Auth Token:", Cypress.env("Auth"));
-      // });
+      cy.createToken().then(() => {
+        cy.log("Auth Token:", Cypress.env("Auth"));
+      });
     });
   });
 
@@ -37,19 +37,21 @@ describe("API Tests", function () {
     });
   });
 
-  it.only("Test-2 : create and delete Product successful", function () {
+  it("Test-2 : create and delete Product successful", function () {
     const data = this.data;
-    console.log(data.setup)
-    bookApi.createBookings(data.setup).then((response) => {
-      expect(response.status).to.be.eq(StatusCode.Created);
-      expect(response.body).to.have.property("id");
-      // id = response.body.bookingid
-    })
-    // .then(()=>{
-    //   bookApi.deletBookings(id).then((response) => {
-    //       expect(response.status).to.be.eq(StatusCode.Created);
-    //     });
-    // })
+    let id;
+    console.log(data.setup);
+    bookApi
+      .createBookings(data.setup)
+      .then((response) => {
+        expect(response.status).to.be.eq(StatusCode.OK);
+        expect(response.body).to.have.property("bookingid");
+        id = response.body.bookingid;
+      })
+      .then(() => {
+        bookApi.deletBookings(id).then((response) => {
+          expect(response.status).to.be.eq(StatusCode.Created);
+        });
+      });
   });
-
 });
