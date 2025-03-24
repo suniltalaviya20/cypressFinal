@@ -23,3 +23,26 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+const CryptoJS = require("crypto-js");
+
+Cypress.Commands.add("createToken", () => {
+  const userName = Cypress.env("userName");
+  const encryptedPassword = Cypress.env("password");
+  const key = Cypress.env("key");
+
+  if (!userName || !encryptedPassword || !key) {
+    throw new Error("Missing environment variables: userName, password, or key!");
+  }
+
+  const password = CryptoJS.AES.decrypt(encryptedPassword, key).toString(CryptoJS.enc.Utf8);
+  cy.request({
+    method: "POST",
+    url: "https://restful-booker.herokuapp.com/auth",
+    body: { username: userName, password: password },
+  }).then((response) => {
+    expect(response.status).to.eq(200);
+    Cypress.env("Auth", response.body.token);
+  });
+});
+
+  

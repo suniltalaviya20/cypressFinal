@@ -12,6 +12,7 @@ class LoginPage {
     }
 
     clickSubmitButton(){
+        cy.get(LoginPageObjects.submitButtonLocator).should('be.visible')
         cy.get(LoginPageObjects.submitButtonLocator).click()
     }
 

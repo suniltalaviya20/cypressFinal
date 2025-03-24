@@ -1,9 +1,10 @@
-const ErrorMessages ={
+const ErrorMessages = {
+  created : "Created"
+};
 
-}
+const StatusCode = {
+  OK: 200,
+  Created:201
+};
 
-const StatusCode ={
-
-}
-
-module.exports={ErrorMessages,StatusCode}
+module.exports = { ErrorMessages, StatusCode };

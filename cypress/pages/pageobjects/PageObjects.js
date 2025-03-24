@@ -8,6 +8,10 @@ class LoginPageObjects {
 class HomePageObjects {
     static get loginMsg() { return '[class="post-title"]' }
 }
+
+
+
+
 module.exports = {
     LoginPageObjects, HomePageObjects
 };

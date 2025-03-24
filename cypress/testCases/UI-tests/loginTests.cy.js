@@ -8,6 +8,7 @@ describe("Login Page tests", function () {
     before("Here you can add anything that need to be run before running test suit", function () {
 
     })
+
     beforeEach("Before Each case", function () {
         cy.fixture("UI-tests/loginTests").then((data)=>{
             this.data = data
@@ -16,8 +17,9 @@ describe("Login Page tests", function () {
     })
 
     after("Here you can add anything that need to be run after running test suit", function () {
-
+      
     })
+    
     afterEach("Afetr each case", function () {
         cy.clearLocalStorage();
         cy.clearAllSessionStorage();

@@ -1,7 +1,9 @@
 {
     "env":{
         "TenantUrl":"https://practicetestautomation.com/practice-test-login/",
-        "userName":"student",
-        "password":"Password123"
+        "TenantApi":"https://reqres.in",
+        "userName":"admin",
+        "password":"U2FsdGVkX18wJafeLvrjhnONMmVh/RlOl9sSZVlseIM=",
+        "key":"tempPass"
     }
 }
