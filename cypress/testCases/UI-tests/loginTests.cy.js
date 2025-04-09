@@ -57,6 +57,6 @@ describe("Login Page tests", function () {
         login.enterUsername(LoginPage.username)
         login.enterPassword(LoginPage.password)
         login.clickSubmitButton();
-        login.verifyUsernameError();
+        login.verifyUsernameError()
     })
 })
