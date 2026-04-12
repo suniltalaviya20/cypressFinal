@@ -1,5 +1,5 @@
 import  LoginPage  from "../../pages/pagemethods/LoginPage";
-import HomePage from "../../pages/pagemethods/homePage";
+import HomePage from "../../pages/pagemethods/HomePage";
 
 const login = new LoginPage;
 const homePage = new HomePage;
