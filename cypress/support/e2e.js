@@ -18,14 +18,6 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-require("@cypress/grep")();
+require("@cypress/grep")();               //To register it on brower side earlier we have done of the node side in config.js
 import 'cypress-mochawesome-reporter/register';
 
-Cypress.on('uncaught:exception', (err) => {
-  if (
-    err.name === 'TypeError' &&
-    err.message.includes("Failed to execute 'observe' on 'MutationObserver'")
-  ) {
-    return false; // prevent Cypress from failing the test
-  }
-});

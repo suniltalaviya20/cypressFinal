@@ -15,22 +15,13 @@ module.exports = defineConfig({
   reporterOptions: {
     ignoreVideos:true
   },
-  // e2e: {
-  //    setupNodeEvents(on, config) {
-    //   require('@cypress/grep/src/plugin')(config);
-    //   require('cypress-mochawesome-reporter/plugin')(on);
-      
-    //   const envFile = config.env.configFile || "QA_Env";
-    //   return getConfigurationFileByName(envFile);
-    // },
     e2e: {
-    async setupNodeEvents(on, config) {
+    async setupNodeEvents(on, config) {                     //Used to listen to Cypress events (like before:browser:launch, task, etc.)
       require("cypress-mochawesome-reporter/plugin")(on);
 
       const envFile = config.env.configFile || "QA_Env";
       const fileConfig = await getConfigurationFileByName(envFile);
 
-      // ✅ Merge file config INTO existing config — preserves grep, grepTags, etc.
       config.env = {
         ...fileConfig.env,   // values from your QA_Env.json
         ...config.env,       // CLI --env values win (grep, configFile, etc.)
@@ -40,14 +31,14 @@ module.exports = defineConfig({
       const { env: _, ...otherFileConfig } = fileConfig;
       Object.assign(config, otherFileConfig);
 
-      // ✅ Register grep AFTER config.env is fully merged
-      require("@cypress/grep/src/plugin")(config);
+      
+      require("@cypress/grep/src/plugin")(config);    //required for implimentation of tags
 
       return config;
     },
     specPattern: "cypress/testCases/**/*.cy.{js,jsx,ts.tsx}",
     fixturesFolder: "cypress/testData",
-    screenshotsFolder: "cypressoutputfilesscreenshotFolder",
+    screenshotsFolder: "cypress/report/html/screenshots",
   },
 
 });
