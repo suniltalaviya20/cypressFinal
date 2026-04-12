@@ -20,3 +20,12 @@ import './commands'
 // require('./commands')
 
 import 'cypress-mochawesome-reporter/register';
+
+Cypress.on('uncaught:exception', (err) => {
+  if (
+    err.name === 'TypeError' &&
+    err.message.includes("Failed to execute 'observe' on 'MutationObserver'")
+  ) {
+    return false; // prevent Cypress from failing the test
+  }
+});

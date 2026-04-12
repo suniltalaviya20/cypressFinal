@@ -1,16 +1,31 @@
 {
   "name": "cypress",
   "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/suniltalaviya20/cypressFinal#readme",
+  "bugs": {
+    "url": "https://github.com/suniltalaviya20/cypressFinal/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suniltalaviya20/cypressFinal.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "npx cypress run",
     "headTest": "npx cypress run --headed",
-    "record dashboardtest": "npx cypress run --record --key 0a00483e-bed7-4003-8801-f0dcd0245948",
+    "record dashboardtest": "npx cypress run --record --key 3da751b8-aaf5-453b-8c28-fae18a3a328c",
     "GreenkartTest": "npx cypress run --spec \"cypress/integration/greenkart/Test1.js\""
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "dependencies": {
+    "convert-excel-to-json": "^1.7.0",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.2.0",
+    "exceljs": "^4.4.0"
+  },
   "devDependencies": {
     "@cypress/grep": "^4.1.0",
     "@types/cypress": "^1.1.3",
@@ -18,11 +33,5 @@
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2",
     "neat-csv": "5.1.0"
-  },
-  "dependencies": {
-    "convert-excel-to-json": "^1.7.0",
-    "crypto": "^1.0.1",
-    "crypto-js": "^4.2.0",
-    "exceljs": "^4.4.0"
   }
 }

@@ -10,6 +10,7 @@ function getConfigurationFileByName(env) {
 }
 
 module.exports = defineConfig({
+  projectId: "vzz5xf",
   reporter: "cypress-mochawesome-reporter",
   reporterOptions: {
     ignoreVideos:true
@@ -24,4 +25,5 @@ module.exports = defineConfig({
     fixturesFolder: "cypress/testData",
     screenshotsFolder: "cypressoutputfilesscreenshotFolder",
   },
+
 });
