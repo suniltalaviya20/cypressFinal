@@ -28,7 +28,7 @@ describe("API Tests", function () {
     cy.clearAllSessionStorage();
   });
 
-  it("Test-1 : Get All Product successful", function () {
+  it("Test-1 : Get All Product successful",{ tags: ['smoke'] }, function () {
     const data = this.data;
     bookApi.getBookings().then((response) => {
       Cypress.env("Auth");

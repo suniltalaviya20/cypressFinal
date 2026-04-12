@@ -18,7 +18,7 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-
+require("@cypress/grep")();
 import 'cypress-mochawesome-reporter/register';
 
 Cypress.on('uncaught:exception', (err) => {

@@ -25,7 +25,7 @@ describe("Login Page tests", function () {
         cy.clearAllSessionStorage();
     })
 
-    it("Test-1 : Successfull login", function(){
+    it("Test-1 : Successfull login",{ tags: ['smoke'] }, function(){
         const data = this.data
         const LoginPage = data.TS1.loginPage;
         login.enterUsername(LoginPage.username)
@@ -34,7 +34,7 @@ describe("Login Page tests", function () {
         homePage.verifyLandendOnHomepage();
     })
 
-    it("Test-2 : wrong usename", function(){
+    it("Test-2 : wrong usename",{ tags: ['smoke'] }, function(){
         const data = this.data
         const LoginPage = data.TS2.loginPage;
         login.enterUsername(LoginPage.username)
