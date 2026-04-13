@@ -31,7 +31,6 @@ describe("API Tests", function () {
   it("Test-1 : Get All Product successful",{ tags: ['smoke'] }, function () {
     const data = this.data;
     bookApi.getBookings().then((response) => {
-      Cypress.env("Auth");
       expect(response.status).to.be.eq(StatusCode.OK);
       expect(response.body[0]).to.have.property("bookingid");
     });

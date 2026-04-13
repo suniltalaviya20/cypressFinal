@@ -25,7 +25,7 @@ describe("Login Page tests", function () {
         cy.clearAllSessionStorage();
     })
 
-    it("Test-1 : Successfull login",{ tags: ['smoke'] }, function(){
+    it("Test-1 : Successfull login",{ tags: ['smoke','norm'] }, function(){
         const data = this.data
         const LoginPage = data.TS1.loginPage;
         login.enterUsername(LoginPage.username)

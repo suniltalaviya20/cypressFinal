@@ -4,6 +4,7 @@ class bookingsApi {
     let url = `${Cypress.env("TenantApi")}/booking`;
     return cy.request({ method: method, url: url }).then((response) => {});
   }
+  
   deletBookings(id) {
     let method = "Delete";
     let url = `${Cypress.env("TenantApi")}/booking/${id}`;
