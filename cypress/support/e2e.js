@@ -18,6 +18,6 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-require("@cypress/grep")();               //To register it on brower side earlier we have done of the node side in config.js
+require("@cypress/grep")();                             //To register it on brower side earlier we have done of the node side in config.js
 import 'cypress-mochawesome-reporter/register';
 
