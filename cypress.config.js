@@ -2,10 +2,9 @@ const { defineConfig } = require("cypress");
 const path = require("path");
 const fs = require("fs-extra");
 function getConfigurationFileByName(env) {
-  const envName = path.basename(env, path.extname(env));
-  const fileLocation = path.resolve("cypress/env", `${envName}.json`);
+  const fileLocation = path.resolve("cypress/env/", `${env}.json`);
   console.log(
-    `BAT : Using ${envName} config.  Set appropriate parameters here - cypress/env/${envName}.json, otherwise the tests will fail.`
+    `BAT : Using ${env} config.  Set appropriate parameters here - cypress/config/${env}.json, otherwise the tests will fail.`
   );
   return fs.readJSON(fileLocation);
 }
